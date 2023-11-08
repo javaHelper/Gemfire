@@ -140,7 +140,9 @@ Java Version: 1.8.0_345
 Log File: /server2/server2.log
 JVM Arguments: -Dgemfire.default.locators=172.17.0.2[10334] -Dgemfire.start-dev-rest-api=false -Dgemfire.use-cluster-configuration=true -Dgemfire.launcher.registerSignalHandlers=true -Djava.awt.headless=true -Dsun.rmi.dgc.server.gcInterval=9223372036854775806
 Class-Path: /geode/lib/geode-core-1.15.1.jar:/geode/lib/geode-server-all-1.15.1.jar
+```
 
+```sh
 gfsh>list members
 Member Count : 3
 
@@ -149,6 +151,25 @@ Member Count : 3
 locator | 05a1f1d86b3e(locator:89:locator)<ec><v0>:41000 [Coordinator]
 server1 | 05a1f1d86b3e(server1:279)<v1>:41001
 server2 | 05a1f1d86b3e(server2:895)<v2>:41002
+
+gfsh>
+```
+
+```sh
+gfsh>describe region --name=people
+Name            : people
+Data Policy     : replicate
+Hosting Members : server2
+                  server1
+
+Non-Default Attributes Shared By Hosting Members  
+
+ Type  |    Name     | Value
+------ | ----------- | ---------------
+Region | data-policy | REPLICATE
+       | size        | 2
+       | scope       | distributed-ack
+
 
 gfsh>
 ```
