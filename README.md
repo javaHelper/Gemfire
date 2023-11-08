@@ -173,3 +173,32 @@ Region | data-policy | REPLICATE
 
 gfsh>
 ```
+
+
+```
+gfsh>stop server --name=server1
+Stopping Cache Server running in /server1 on 05a1f1d86b3e[40404] as server1...
+Process ID: 279
+Log File: /server1/server1.log
+.............................................................
+gfsh>list members
+Member Count : 2
+
+ Name   | Id
+------- | ------------------------------------------------------------
+locator | 05a1f1d86b3e(locator:89:locator)<ec><v0>:41000 [Coordinator]
+server2 | 05a1f1d86b3e(server2:895)<v2>:41002
+
+gfsh>query --query="select * from /people"
+Result : true
+Limit  : 100
+Rows   : 2
+
+Result
+----------------
+Shrutika Ninawe
+Prateek Ashtikar
+
+gfsh>
+```
+
