@@ -175,7 +175,7 @@ gfsh>
 ```
 
 
-```
+```sh
 gfsh>stop server --name=server1
 Stopping Cache Server running in /server1 on 05a1f1d86b3e[40404] as server1...
 Process ID: 279
@@ -202,3 +202,34 @@ Prateek Ashtikar
 gfsh>
 ```
 
+```sh
+gfsh>start server --name=server1
+Starting a Geode Server in /server1...
+.
+Server in /server1 on 05a1f1d86b3e[40404] as server1 is currently online.
+Process ID: 279
+Uptime: 59 minutes 18 seconds
+Geode Version: 1.15.1
+Java Version: 1.8.0_345
+Log File: /server1/server1.log
+JVM Arguments: -Dgemfire.default.locators=172.17.0.2[10334] -Dgemfire.start-dev-rest-api=false -Dgemfire.use-cluster-configuration=true -Dgemfire.launcher.registerSignalHandlers=true -Djava.awt.headless=true -Dsun.rmi.dgc.server.gcInterval=9223372036854775806
+Class-Path: /geode/lib/geode-core-1.15.1.jar:/geode/lib/geode-server-all-1.15.1.jar
+
+gfsh>exit
+Exiting... 
+
+```
+
+
+```sh
+prateekashtikar@Prateeks-MacBook-Pro Gemfire % docker run -it apachegeode/geode
+WARNING: The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested
+    _________________________     __
+   / _____/ ______/ ______/ /____/ /
+  / /  __/ /___  /_____  / _____  / 
+ / /__/ / ____/  _____/ / /    / /  
+/______/_/      /______/_/    /_/    1.15.1
+
+Monitor and Manage Apache Geode
+gfsh>
+```
