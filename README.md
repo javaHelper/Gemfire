@@ -1,6 +1,6 @@
 # Gemfire
 
-```
+```sh
 docker run -it apachegeode/geode
 Unable to find image 'apachegeode/geode:latest' locally
 latest: Pulling from apachegeode/geode
@@ -125,4 +125,30 @@ Region | data-policy | REPLICATE
 
 gfsh>
 
+```
+
+
+```sh
+gfsh>start server --name=server2 --server-port=0
+Starting a Geode Server in /server2...
+.................
+Server in /server2 on 05a1f1d86b3e[36931] as server2 is currently online.
+Process ID: 895
+Uptime: 20 seconds
+Geode Version: 1.15.1
+Java Version: 1.8.0_345
+Log File: /server2/server2.log
+JVM Arguments: -Dgemfire.default.locators=172.17.0.2[10334] -Dgemfire.start-dev-rest-api=false -Dgemfire.use-cluster-configuration=true -Dgemfire.launcher.registerSignalHandlers=true -Djava.awt.headless=true -Dsun.rmi.dgc.server.gcInterval=9223372036854775806
+Class-Path: /geode/lib/geode-core-1.15.1.jar:/geode/lib/geode-server-all-1.15.1.jar
+
+gfsh>list members
+Member Count : 3
+
+ Name   | Id
+------- | ------------------------------------------------------------
+locator | 05a1f1d86b3e(locator:89:locator)<ec><v0>:41000 [Coordinator]
+server1 | 05a1f1d86b3e(server1:279)<v1>:41001
+server2 | 05a1f1d86b3e(server2:895)<v2>:41002
+
+gfsh>
 ```
